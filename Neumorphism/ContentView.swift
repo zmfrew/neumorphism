@@ -3,13 +3,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            Color.offWhite
+            LinearGradient(Color.darkStart, Color.darkEnd)
             VStack {
                 RoundedRectangle(cornerRadius: 25)
-                    .fill(Color.offWhite)
+                    .fill(Color.darkEnd)
                     .frame(width: 300, height: 300)
-                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y:10)
-                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                    .shadow(color: Color.darkStart, radius: 10, x: -10, y: -10)
+                    .shadow(color: Color.darkEnd, radius: 10, x: 10, y: 10)
                     .padding(100)
                 
                 Button(action: {
@@ -18,7 +18,7 @@ struct ContentView: View {
                     Image(systemName: "heart.fill")
                         .foregroundColor(.gray)
                 }
-                .buttonStyle(SimpleButtonStyle())
+                .buttonStyle(DarkButtonStyle())
             }
             .edgesIgnoringSafeArea(.all)
         }
